@@ -39,5 +39,6 @@ class Writer
   end
 
   def incoming_text
+  end
 
 end
