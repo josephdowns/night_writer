@@ -12,4 +12,10 @@ describe Writer do
   it "is a class" do
     expect(@night_writer).to be_a(Writer)
   end
+
+  it "reads a file" do
+    incoming_text = @night_writer.read
+    expected = puts incoming_text
+    expects(expected).to eq("")
+  end
 end
