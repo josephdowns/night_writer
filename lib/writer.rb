@@ -2,12 +2,12 @@ class Writer
 
   def run
     file = open_file_one
-    read(file)
+    read = read(file)
     close(file)
-    file2 = open_file_two
-    write_file(file2)
-    close(file2)
-    print_statement
+    # file2 = open_file_two
+    # write_file(file2)
+    # close(file2)
+    # print_statement
   end
 
   def open_file_one
