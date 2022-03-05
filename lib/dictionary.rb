@@ -2,13 +2,13 @@ class Dictionary
   attr_reader :top_line, :middle_line, :bottom_line
 
   def initialize
-    @top_line = {"a": "O."}
-    @middle_line = middle_line
+    @top_line = {"a" => "O."}
+    @middle_line = {"a" => ".."}
     @bottom_line = bottom_line
   end
 
-  def braille_top(letter_given)
-    @top_line.map { |letter| letter[letter_given]}
+  def braille_top(letter)
+    @top_line[letter]
   end
 
 end

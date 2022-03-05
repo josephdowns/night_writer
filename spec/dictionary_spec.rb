@@ -12,7 +12,7 @@ describe Dictionary do
   end
 
   it "looks at the top line" do
-    binding.pry
+    letter = "a"
     expect(@dictionary.braille_top(letter)).to eq("O.")
   end
 end
