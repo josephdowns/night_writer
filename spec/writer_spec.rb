@@ -37,6 +37,6 @@ describe Writer do
 
   it "finds the # of characters" do
     incoming_text = @night_writer.read(@open_file)
-    expect(incoming_text.characters).to eq(20)
+    expect(@night_writer.characters(incoming_text)).to eq(49)
   end
 end

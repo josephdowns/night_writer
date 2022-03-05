@@ -30,8 +30,9 @@ class Writer
     file.write
   end
 
-  def characters
-    File.read(ARGV[0]).length
+  def characters(text)
+    text.length
+    # File.read(ARGV[0]).length
   end
 
   def print_statement
