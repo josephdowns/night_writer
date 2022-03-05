@@ -20,4 +20,9 @@ describe Dictionary do
     letter = "a"
     expect(@dictionary.braille_middle(letter)).to eq("..")
   end
+
+  it "looks at the bottom line" do
+    letter = "a"
+    expect(@dictionary.braille_bottom(letter)).to eq("..")
+  end
 end
