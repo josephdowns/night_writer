@@ -7,6 +7,7 @@ describe Writer do
     ARGV[0] = './spec/test_folder/test_mes.txt'
     ARGV[1] = './spec/test_folder/new_test_mes.txt'
     @night_writer = Writer.new
+    @night_writer.run
     @open_file = @night_writer.open_file_one
     @open_file2 = @night_writer.open_file_two
   end
@@ -39,5 +40,9 @@ describe Writer do
 
   it "prints to terminal" do
     expect{@night_writer.print_statement}.to output("Created './spec/test_folder/new_test_mes.txt' conataining 49 characters\n").to_stdout
+  end
+
+  it "writes a new file" do
+    expect(@night_writer.write_file(@open_file2)).to eq(49)
   end
 end
