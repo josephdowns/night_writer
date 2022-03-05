@@ -24,13 +24,6 @@ describe Writer do
     expect(incoming_text).to be_a(String)
   end
 
-  xit "closes a file" do
-    open_file = @night_writer.open_file_one
-    # binding.pry
-    bey = @night_writer.close(@open_file)
-    expect(bey).to be(nil)
-  end
-
   it "opens a second file" do
     expect(@open_file2).to be_a(File)
   end
@@ -42,5 +35,9 @@ describe Writer do
 
   it "defines the incoming text" do
     expect(@night_writer.incoming_text).to eq(@night_writer.read(@open_file))
+  end
+
+  it "prints to terminal" do
+    expect{@night_writer.print_statement}.to output("Created './spec/test_folder/new_test_mes.txt' conataining 49 characters\n").to_stdout
   end
 end
