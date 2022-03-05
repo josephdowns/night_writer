@@ -30,7 +30,6 @@ class Writer
 
   def characters(incoming_text)
     @incoming_text.length
-    # File.read(ARGV[0]).length
   end
 
   def print_statement
