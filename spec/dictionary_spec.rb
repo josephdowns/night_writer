@@ -28,8 +28,6 @@ describe Dictionary do
 
   it "puts it all together" do
     letter = "a"
-    expect{@dictionary.put_braille(letter)}.to output(
-      "O.\n..\n..\n"
-    ).to_stdout
+    expect(@dictionary.put_braille(letter).length).to eq(8)
   end
 end
