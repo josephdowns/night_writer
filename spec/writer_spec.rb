@@ -34,4 +34,9 @@ describe Writer do
   it "opens a second file" do
     expect(@open_file2).to be_a(File)
   end
+
+  it "finds the # of characters" do
+    incoming_text = @night_writer.read(@open_file)
+    expect(incoming_text.characters).to eq(20)
+  end
 end

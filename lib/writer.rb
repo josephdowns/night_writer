@@ -3,10 +3,10 @@ class Writer
   def run
     file = open_file_one
     read = read(file)
-    close(file)
+    # close(file)
     file2 = open_file_two
     write_file(file2)
-    close(file2)
+    # close(file2)
     print_statement
   end
 
