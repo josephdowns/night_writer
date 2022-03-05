@@ -8,6 +8,7 @@ class Dictionary
   end
 
   def braille_top
-    @top_line =
+    @top_line = blank
+  end
 
 end

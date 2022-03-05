@@ -1,4 +1,4 @@
-require '../lib/writer'
+require './lib/writer'
 require 'rspec'
 require 'pry'
 
