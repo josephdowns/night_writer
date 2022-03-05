@@ -1,4 +1,4 @@
-require './lib/writer'
+require '../lib/writer'
 require 'rspec'
 require 'pry'
 
@@ -38,5 +38,9 @@ describe Writer do
   it "finds the # of characters" do
     incoming_text = @night_writer.read(@open_file)
     expect(@night_writer.characters(incoming_text)).to eq(49)
+  end
+
+  it "defines the incoming text" do
+    expect(@night_writer.incoming_text).to eq(@night_writer.read(@open_file))
   end
 end

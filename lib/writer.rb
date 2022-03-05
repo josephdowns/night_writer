@@ -1,5 +1,9 @@
 class Writer
 
+  def initialize
+    @incoming_text = incoming_text
+  end
+
   def run
     file = open_file_one
     read = read(file)
@@ -30,16 +34,17 @@ class Writer
     file.write
   end
 
-  def characters(text)
-    text.length
+  def characters(incoming_text)
+    @incoming_text.length
     # File.read(ARGV[0]).length
   end
 
   def print_statement
-    puts "Created #{ARGV[1]} conataining #{characters} characters"
+    puts "Created '#{ARGV[1]}' conataining #{characters(incoming_text)} characters"
   end
 
   def incoming_text
+    @incoming_text = File.read(ARGV[0])
   end
 
 end
