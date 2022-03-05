@@ -26,21 +26,19 @@ class Dictionary
   end
 
   def braille_top(letter)
-    @top_line[letter]
+    @top_line[letter.strip]
   end
 
   def braille_middle(letter)
-    @middle_line[letter]
+    @middle_line[letter.strip]
   end
 
   def braille_bottom(letter)
-    @bottom_line[letter]
+    @bottom_line[letter.strip]
   end
 
   def put_braille(letter)
-    puts braille_top(letter)
-    puts braille_middle(letter)
-    puts braille_bottom(letter)
+    braille = "#{braille_top(letter)}\n#{braille_middle(letter)}\n#{braille_bottom(letter)}"
   end
 
 end
