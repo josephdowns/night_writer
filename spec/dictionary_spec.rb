@@ -28,6 +28,7 @@ describe Dictionary do
 
   it "puts it all together" do
     letter = "a"
+    binding.pry
     expect{@dictionary.put_braille(letter)}.to output(
       "O.\n..\n..\n"
     ).to_stdout
