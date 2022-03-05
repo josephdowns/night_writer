@@ -19,4 +19,10 @@ class Dictionary
     @bottom_line[letter]
   end
 
+  def put_braille(letter)
+    puts braille_top(letter)
+    puts braille_middle(letter)
+    puts braille_bottom(letter)
+  end
+
 end
