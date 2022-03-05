@@ -10,4 +10,9 @@ describe Dictionary do
   it "to be a class" do
     expect(@dictionary).to be_a(Dictionary)
   end
+
+  it "looks at the top line" do
+    binding.pry
+    expect(@dictionary.braille_top(letter)).to eq("O.")
+  end
 end
