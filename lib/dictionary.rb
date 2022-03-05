@@ -15,4 +15,8 @@ class Dictionary
     @middle_line[letter]
   end
 
+  def braille_bottom(letter)
+    @bottom_line[letter]
+  end
+
 end
