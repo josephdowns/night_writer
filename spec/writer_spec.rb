@@ -7,6 +7,8 @@ describe Writer do
     ARGV[0] = './spec/test_folder/test_mes.txt'
     ARGV[1] = './spec/test_folder/new_test_mes.txt'
     @night_writer = Writer.new
+    @open_file = @night_writer.open_file_one
+    @open_file2 = @night_writer.open_file_two
   end
 
   it "is a class" do
@@ -14,13 +16,22 @@ describe Writer do
   end
 
   it "opens a file" do
-    coolio = @night_writer.open_file_one
-    expect(coolio).to be_a(File)
+    expect(@open_file).to be_a(File)
   end
 
   it "reads a file" do
-    coolio = @night_writer.open_file_one
-    incoming_text = @night_writer.read(coolio)
+    incoming_text = @night_writer.read(@open_file)
     expect(incoming_text).to be_a(String)
+  end
+
+  xit "closes a file" do
+    open_file = @night_writer.open_file_one
+    # binding.pry
+    bey = @night_writer.close(@open_file)
+    expect(bey).to be(nil)
+  end
+
+  it "opens a second file" do
+    expect(@open_file2).to be_a(File)
   end
 end
