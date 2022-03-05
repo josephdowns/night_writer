@@ -4,7 +4,7 @@ class Dictionary
   def initialize
     @top_line = {"a" => "O."}
     @middle_line = {"a" => ".."}
-    @bottom_line = bottom_line
+    @bottom_line = {"a" => ".."}
   end
 
   def braille_top(letter)
