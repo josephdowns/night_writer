@@ -25,4 +25,9 @@ describe Dictionary do
     letter = "a"
     expect(@dictionary.braille_bottom(letter)).to eq("..")
   end
+
+  it "puts it all together" do
+    letter = "a"
+    expect(@dictionary.put_braille)
+  end
 end
