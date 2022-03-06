@@ -38,32 +38,31 @@ class Dictionary
   end
 
   def put_braille(text)
-    word_count = text.length
+    word_count = text.strip.length
     top_line_count = 0
-    middle_line_count = 0
-    bottom_line_count = 0
+    array = []
+    array_count = 0
 
     word_count.times do
-      # binding.pry
-      print braille_top(text[top_line_count])
-      top_line_count += 1
+      array << text[array_count]
+      array_count += 1
     end
 
-    print "\n"
-
-    word_count.times do
-      print braille_middle(text[middle_line_count])
-      middle_line_count += 1
+    top_line = array.map do |letter|
+      braille_top(letter)
     end
 
-    print "\n"
-
-    word_count.times do
-      print braille_bottom(text[bottom_line_count])
-      bottom_line_count += 1
+    middle_line = array.map do |letter|
+      braille_middle(letter)
     end
 
-    # braille = "#{braille_top(letter)}\n#{braille_middle(letter)}\n#{braille_bottom(letter)}"
+    bottom_line = array.map do |letter|
+      braille_bottom(letter)
+    end
+    # binding.pry
+    braille = "#{top_line.join}\n#{middle_line.join}\n#{bottom_line.join}"
+    return braille
+
   end
 
 end

@@ -35,7 +35,7 @@ class Writer < Dictionary
   end
 
   def characters(incoming_text)
-    @incoming_text.length
+    @incoming_text.strip.length
   end
 
   def print_statement
