@@ -8,37 +8,62 @@ class Dictionary
                  "m" => "OO", "n" => "OO", "o" => "O.", "p" => "OO",
                  "q" => "OO", "r" => "O.", "s" => ".O", "t" => ".O",
                  "u" => "O.", "v" => "O.", "w" => ".O", "x" => "OO",
-                 "y" => "OO", "z" => "O."}
+                 "y" => "OO", "z" => "O.", " " => ".."}
     @middle_line = {"a" => "..", "b" => "O.", "c" => "..", "d" => ".O",
                  "e" => ".O", "f" => "O.", "g" => "OO", "h" => "OO",
                  "i" => "O.", "j" => "OO", "k" => "..", "l" => "O.",
                  "m" => "..", "n" => ".O", "o" => ".O", "p" => "O.",
                  "q" => "OO", "r" => "OO", "s" => "O.", "t" => "OO",
                  "u" => "..", "v" => "O.", "w" => "OO", "x" => "..",
-                 "y" => ".O", "z" => ".O"}
+                 "y" => ".O", "z" => ".O", " " => ".."}
     @bottom_line = {"a" => "..", "b" => "..", "c" => "..", "d" => "..",
                  "e" => "..", "f" => "..", "g" => "..", "h" => "..",
                  "i" => "..", "j" => "..", "k" => "O.", "l" => "O.",
                  "m" => "O.", "n" => "O.", "o" => "O.", "p" => "O.",
                  "q" => "O.", "r" => "O.", "s" => "O.", "t" => "O.",
                  "u" => "OO", "v" => "OO", "w" => ".O", "x" => "OO",
-                 "y" => "OO", "z" => "OO"}
+                 "y" => "OO", "z" => "OO", " " => ".."}
   end
 
   def braille_top(letter)
-    @top_line[letter.strip]
+    @top_line[letter]
   end
 
   def braille_middle(letter)
-    @middle_line[letter.strip]
+    @middle_line[letter]
   end
 
   def braille_bottom(letter)
-    @bottom_line[letter.strip]
+    @bottom_line[letter]
   end
 
-  def put_braille(letter)
-    braille = "#{braille_top(letter)}\n#{braille_middle(letter)}\n#{braille_bottom(letter)}"
+  def put_braille(text)
+    word_count = text.length
+    top_line_count = 0
+    middle_line_count = 0
+    bottom_line_count = 0
+
+    word_count.times do
+      # binding.pry
+      print braille_top(text[top_line_count])
+      top_line_count += 1
+    end
+
+    print "\n"
+
+    word_count.times do
+      print braille_middle(text[middle_line_count])
+      middle_line_count += 1
+    end
+
+    print "\n"
+
+    word_count.times do
+      print braille_bottom(text[bottom_line_count])
+      bottom_line_count += 1
+    end
+
+    # braille = "#{braille_top(letter)}\n#{braille_middle(letter)}\n#{braille_bottom(letter)}"
   end
 
 end

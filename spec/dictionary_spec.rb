@@ -27,7 +27,8 @@ describe Dictionary do
   end
 
   it "puts it all together" do
-    letter = "a"
-    expect(@dictionary.put_braille(letter).length).to eq(8)
+    text = "an apple a day"
+    # binding.pry
+    expect(@dictionary.put_braille(text)).to eq(14)
   end
 end
