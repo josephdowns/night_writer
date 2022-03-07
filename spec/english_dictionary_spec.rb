@@ -20,5 +20,10 @@ describe EnglishDictionary do
       text = "O.O.\n..O.\n...."
       expect(@dictionary.put_english(text)).to eq("ab")
     end
+
+    it "gets even more complicated" do
+      text = "O.O.OO\n..O...\n......\n"
+      expect(@dictionary.put_english(text)).to eq("abc")
+    end
   end
 end
