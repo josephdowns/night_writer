@@ -28,5 +28,11 @@ describe Reader do
       incoming_text = @night_reader.read(@file1)
       expect(incoming_text).to be_a(String)
     end
+
+    it "finds the # of characters"
+      incoming_text = @night_reader.read(@file1)
+      expect(@night_reader.characters(incoming_text)).to eq(20)
+    end
+
   end
 end
