@@ -1,8 +1,10 @@
 require 'pry'
+require './english_dictionary'
 
-class Reader
+class Reader < EnglishDictionary
 
   def initialize
+    @english_dictionary = EnglishDictionary.new
     @incoming_text = incoming_text
     @english_text = nil
   end
@@ -11,7 +13,7 @@ class Reader
     file = open_file_one
     read = read(file)
     file2 = open_file_two
-    # english_text
+    english_text
     write_file(file2)
     print_statement
   end
@@ -42,6 +44,10 @@ class Reader
 
   def write_file(file)
     file.write(@incoming_text)
+  end
+
+  def english_text
+    @english_text = @english_dictionary.put_english(@incoming_text)
   end
 
 end
