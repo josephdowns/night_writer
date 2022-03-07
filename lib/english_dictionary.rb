@@ -10,10 +10,8 @@ class EnglishDictionary
                            "OO..O." => "m", "OO.OO." => "n", "O..OO." => "o",
                            "OOO.O." => "p", "OOOOO." => "q", "O.OOO." => "r",
                            ".OO.O." => "s", ".OOOO." => "t", "O...OO" => "u",
-                           "O.O.OO" => "v", ".OOO.O" => "w"
-
-
-                          }
+                           "O.O.OO" => "v", ".OOO.O" => "w", "OO..OO" => "x",
+                           "OO.OOO" => "y", "O..OOO" => "z", "......" => " "}
   end
 
   def put_english(text)
