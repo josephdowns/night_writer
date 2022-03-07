@@ -68,9 +68,7 @@ class EnglishDictionary
       letters_index += 1
     end
 
-
     return message.join
-
 
   end
 
