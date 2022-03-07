@@ -3,7 +3,7 @@ require 'pry'
 class Reader
 
   def initialize
-    # @incoming_text = incoming_text
+    @incoming_text = incoming_text
     @english_text = nil
   end
 
@@ -32,5 +32,8 @@ class Reader
     incoming_text.strip.length
   end
 
+  def incoming_text
+    @incoming_text = File.read(ARGV[0])
+  end
 
 end

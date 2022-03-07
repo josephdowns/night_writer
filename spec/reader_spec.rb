@@ -34,7 +34,9 @@ describe Reader do
       expect(@night_reader.characters(incoming_text)).to eq(74)
     end
 
-    it "defines the incoming_text"
+    it "defines the incoming_text" do
+      expect(@night_reader.incoming_text).to eq(@night_reader.read(@file1))
+    end
 
   end
 end
