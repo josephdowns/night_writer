@@ -1,3 +1,1 @@
-Test Test
-test Test
-This project is fun but daunting.
+this is a test of the system
