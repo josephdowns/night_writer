@@ -38,5 +38,9 @@ describe Reader do
       expect(@night_reader.incoming_text).to eq(@night_reader.read(@file1))
     end
 
+    it "prints to the terminal" do
+      expect{@night_reader.print_statement}.to output("Created './spec/test_folder/new_eng_mess.txt' conataining 74 characters").to_stdout
+    end
+
   end
 end
