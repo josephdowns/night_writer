@@ -14,6 +14,7 @@ class Writer < Dictionary
     read = read(file)
     file2 = open_file_two #creates new file
     braille_text
+    # binding.pry
     write_file(file2)
     print_statement
   end

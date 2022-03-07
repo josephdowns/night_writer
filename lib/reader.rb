@@ -43,7 +43,7 @@ class Reader < EnglishDictionary
   end
 
   def write_file(file)
-    file.write(@incoming_text)
+    file.write(@english_text)
   end
 
   def english_text
