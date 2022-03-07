@@ -24,5 +24,9 @@ class Reader
     File.open(ARGV[1], "w")
   end
 
+  def read(file)
+    file.read
+  end
+
 
 end

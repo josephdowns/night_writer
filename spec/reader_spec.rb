@@ -25,7 +25,7 @@ describe Reader do
     end
 
     it "reads a file" do
-      incoming_text = @night_reader.read(@open_file)
+      incoming_text = @night_reader.read(@file1)
       expect(incoming_text).to be_a(String)
     end
   end
