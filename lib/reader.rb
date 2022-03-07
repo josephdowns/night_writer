@@ -14,6 +14,7 @@ class Reader < EnglishDictionary
     read = read(file)
     file2 = open_file_two
     english_text
+    binding.pry
     write_file(file2)
     print_statement
   end
@@ -43,7 +44,7 @@ class Reader < EnglishDictionary
   end
 
   def write_file(file)
-    file.write(@incoming_text)
+    file.write(@english_text)
   end
 
   def english_text

@@ -51,6 +51,7 @@ class Dictionary
       array << text[array_count]
       array_count += 1
     end
+    # binding.pry
 
     array.delete("\n")
 
