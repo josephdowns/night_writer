@@ -3,7 +3,7 @@ require 'pry'
 class Reader
 
   def initialize
-    @incoming_text = incoming_text
+    # @incoming_text = incoming_text
     @english_text = nil
   end
 
@@ -16,5 +16,9 @@ class Reader
     print_statement
   end
 
-  
+  def open_file_one
+    File.open(ARGV[0], "r")
+  end
+
+
 end
