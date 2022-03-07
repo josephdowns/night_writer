@@ -3,6 +3,7 @@ class EnglishDictionary
   attr_reader :english_dictionary
 
   def initialize
+    @x = []
     @english_dictionary = {"O....." => "a", "O.O..." => "b", "OO...." => "c",
                            "OO.O.." => "d", "O..O.." => "e", "OOO..." => "f",
                            "OOOO.." => "g", "O.OO.." => "h", ".OO..." => "i",
@@ -14,14 +15,28 @@ class EnglishDictionary
                            "OO.OOO" => "y", "O..OOO" => "z", "......" => " "}
   end
 
-  def put_english(text)
-    x = text.split("\n")
-    lines = x.count / 3
+  def account_for_lines(text)
+    @x = text.split("\n")
+    lines = @x.count / 3
     line_index = 0
     top = []
     middle = []
     bottom = []
-    combo = []
+
+
+    lines.times do
+      top << @x[line_index]
+      middle << @x[line_index + 1]
+      bottom << @x[line_index + 2]
+      line_index += 3
+    end
+
+    @x = [top, middle, bottom]
+
+  end
+
+  def put_english(text)
+    account_for_lines(text)
     characters = (text.strip.length / 6)
     letters = []
     letters_index = 0
@@ -29,16 +44,7 @@ class EnglishDictionary
     a = 0
     message = []
 
-    lines.times do
-      top << x[line_index]
-      middle << x[line_index + 1]
-      bottom << x[line_index + 2]
-      line_index += 3
-    end
-
-    x = [top, middle, bottom]
-
-    x = x.map { |line| line.join}
+    @x = @x.map { |line| line.join}
 
     characters.times do
       letters << []
@@ -47,7 +53,7 @@ class EnglishDictionary
     characters.times do
       index += 1
       count = 0
-      x.each do |line|
+      @x.each do |line|
         letters[index] << line[a..a+1]
         count += 1
         if count == 3
