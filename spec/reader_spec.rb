@@ -42,5 +42,9 @@ describe Reader do
       expect{@night_reader.print_statement}.to output("Created './spec/test_folder/new_eng_mess.txt' conataining 74 characters\n").to_stdout
     end
 
+    it "writes a new file" do
+      expect(@night_reader.write_file(@file2)).to be_a(Integer)
+    end
+
   end
 end
