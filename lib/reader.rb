@@ -40,4 +40,8 @@ class Reader
     puts "Created '#{ARGV[1]}' conataining #{characters(incoming_text)} characters"
   end
 
+  def write_file(file)
+    file.write(@incoming_text)
+  end
+
 end
