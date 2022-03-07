@@ -29,10 +29,12 @@ describe Reader do
       expect(incoming_text).to be_a(String)
     end
 
-    it "finds the # of characters"
+    it "finds the # of characters" do
       incoming_text = @night_reader.read(@file1)
-      expect(@night_reader.characters(incoming_text)).to eq(20)
+      expect(@night_reader.characters(incoming_text)).to eq(74)
     end
+
+    it "defines the incoming_text"
 
   end
 end

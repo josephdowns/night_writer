@@ -28,5 +28,9 @@ class Reader
     file.read
   end
 
+  def characters(incoming_text)
+    incoming_text.strip.length
+  end
+
 
 end
