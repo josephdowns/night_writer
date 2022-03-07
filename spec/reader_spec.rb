@@ -5,15 +5,15 @@ require './lib/reader'
 describe Reader do
   context "first steps" do
     before (:each) do
-      @reader = Reader.new
+      @night_reader = Reader.new
       ARGV[0] = '.spec/test_folder/test_braille.txt'
       ARGV[1] = '.spec/test_folder/new_eng_mess.txt'
-      @file1 = @reader.open_file_one
-      @file2 = @reader.open_file_two
+      @file1 = @night_reader.open_file_one
+      @file2 = @night_reader.open_file_two
     end
 
     it "is a class" do
-      expect(@reader).to be_a(Reader)
+      expect(@night_reader).to be_a(Reader)
     end
 
     it "opens a file" do
@@ -22,5 +22,11 @@ describe Reader do
 
     it "opens a second file" do
       expect(@file2).to be_a(File)
+    end
+
+    it "reads a file" do
+      incoming_text = @night_reader.read(@open_file)
+      expect(incoming_text).to be_a(String)
+    end
   end
 end
