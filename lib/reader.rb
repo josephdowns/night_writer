@@ -20,5 +20,9 @@ class Reader
     File.open(ARGV[0], "r")
   end
 
+  def open_file_two
+    File.open(ARGV[1], "w")
+  end
+
 
 end

@@ -9,7 +9,7 @@ describe Reader do
       ARGV[0] = './spec/test_folder/test_braille.txt'
       ARGV[1] = './spec/test_folder/new_eng_mess.txt'
       @file1 = @night_reader.open_file_one
-      # @file2 = @night_reader.open_file_two
+      @file2 = @night_reader.open_file_two
     end
 
     it "is a class" do
