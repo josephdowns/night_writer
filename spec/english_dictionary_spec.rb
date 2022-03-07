@@ -25,5 +25,10 @@ describe EnglishDictionary do
       text = "O.O.OO\n..O...\n......\n"
       expect(@dictionary.put_english(text)).to eq("abc")
     end
+
+    it "has a space" do
+      text = "O...OO\n......\n......\n"
+      expect(@dictionary.put_english(text)).to eq("a c")
+    end
   end
 end
