@@ -36,4 +36,8 @@ class Reader
     @incoming_text = File.read(ARGV[0])
   end
 
+  def print_statement
+    puts "Created '#{ARGV[1]}' conataining #{characters(incoming_text)} characters"
+  end
+
 end

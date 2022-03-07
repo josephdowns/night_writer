@@ -39,7 +39,7 @@ describe Reader do
     end
 
     it "prints to the terminal" do
-      expect{@night_reader.print_statement}.to output("Created './spec/test_folder/new_eng_mess.txt' conataining 74 characters").to_stdout
+      expect{@night_reader.print_statement}.to output("Created './spec/test_folder/new_eng_mess.txt' conataining 74 characters\n").to_stdout
     end
 
   end
