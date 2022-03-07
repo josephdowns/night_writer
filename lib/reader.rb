@@ -11,7 +11,7 @@ class Reader
     file = open_file_one
     read = read(file)
     file2 = open_file_two
-    english_text
+    # english_text
     write_file(file2)
     print_statement
   end

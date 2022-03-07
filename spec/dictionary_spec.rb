@@ -30,7 +30,7 @@ describe Dictionary do
     it "puts it all together" do
       text = "an apple a day"
       expect(@dictionary.put_braille(text)).to eq(
-        "O.OO..O.OOOOO.O...O...OOO.OO\n...O....O.O.O..O.......O...O\n..O.....O.O.O.............OO"
+        "O.OO..O.OOOOO.O...O...OOO.OO\n...O....O.O.O..O.......O...O\n..O.....O.O.O.............OO\n"
       )
     end
   end

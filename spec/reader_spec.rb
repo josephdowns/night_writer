@@ -46,5 +46,10 @@ describe Reader do
       expect(@night_reader.write_file(@file2)).to be_a(Integer)
     end
 
+    it "creates a new file" do
+      @night_reader.run
+      expect('./spec/test_folder/new_eng_mess.txt').to be_a(String)
+    end
+
   end
 end
