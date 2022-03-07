@@ -1,7 +1,9 @@
 require 'pry'
 require './dictionary'
+require './manageable'
 
 class Writer < Dictionary
+  include Manageable
 
   def initialize
     @dictionary = Dictionary.new
@@ -14,37 +16,12 @@ class Writer < Dictionary
     read = read(file)
     file2 = open_file_two #creates new file
     braille_text
-    # binding.pry
     write_file(file2)
     print_statement
   end
 
-  def open_file_one
-    File.open(ARGV[0], "r")
-  end
-
-  def read(file)
-    file.read
-  end
-
-  def open_file_two
-    File.open(ARGV[1], "w")
-  end
-
   def write_file(file)
     file.write(@braille_text)
-  end
-
-  def characters(incoming_text)
-    @incoming_text.strip.length
-  end
-
-  def print_statement
-    puts "Created '#{ARGV[1]}' conataining #{characters(incoming_text)} characters"
-  end
-
-  def incoming_text
-    @incoming_text = File.read(ARGV[0])
   end
 
   def braille_text
