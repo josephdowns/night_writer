@@ -39,29 +39,45 @@ class Dictionary
 
   def put_braille(text)
     word_count = text.strip.length
-    top_line_count = 0
+    lines = (word_count / 40.0).ceil
     array = []
     array_count = 0
+    a = 0
+    b = 39
+    range = (a..b)
+    braille = []
 
     word_count.times do
       array << text[array_count]
       array_count += 1
     end
 
-    top_line = array.map do |letter|
-      braille_top(letter)
+    array.delete("\n")
+
+    lines.times do
+      array[range].each do |letter|
+        braille << braille_top(letter)
+      end
+
+      braille << "\n"
+
+      array[range].each do |letter|
+        braille << braille_middle(letter)
+      end
+
+      braille << "\n"
+
+      array[range].each do |letter|
+        braille << braille_bottom(letter)
+      end
+
+      braille << "\n"
+      a += 40
+      b += 40
+      range = (a..b)
     end
 
-    middle_line = array.map do |letter|
-      braille_middle(letter)
-    end
-
-    bottom_line = array.map do |letter|
-      braille_bottom(letter)
-    end
-    # binding.pry
-    braille = "#{top_line.join}\n#{middle_line.join}\n#{bottom_line.join}"
-    return braille
+    return braille.join
 
   end
 
