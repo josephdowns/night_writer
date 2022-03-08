@@ -24,6 +24,10 @@ class Reader < EnglishDictionary
     file.write(@english_text)
   end
 
+  def characters(incoming_text)
+    (@incoming_text.strip.length) / 6
+  end
+
   def english_text
     @english_text = @english_dictionary.put_english(@incoming_text)
   end
